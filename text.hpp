@@ -6,7 +6,6 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include <windows.h>
 
 using namespace std;
 
@@ -36,20 +35,20 @@ class text {
 
         void loadLetter(char ch, int l_delay, int retries){
             for(int i = 0; i <= retries; i++){
-                this_thread::sleep_for(chrono::milliseconds(l_delay));
-                system("cls");
-                cout << "\\" << endl;
-                this_thread::sleep_for(chrono::milliseconds(l_delay));
-                system("cls");
-                cout << "|" << endl;
-                this_thread::sleep_for(chrono::milliseconds(l_delay));
-                system("cls");
-                cout << "/" << endl;
-                this_thread::sleep_for(chrono::milliseconds(l_delay));
-                system("cls");
-                cout << "-" << endl;
+            this_thread::sleep_for(chrono::milliseconds(l_delay));
+            system("clear");
+            cout << "\\" << endl;
+            this_thread::sleep_for(chrono::milliseconds(l_delay));
+            system("clear");
+            cout << "|" << endl;
+            this_thread::sleep_for(chrono::milliseconds(l_delay));
+            system("clear");
+            cout << "/" << endl;
+            this_thread::sleep_for(chrono::milliseconds(l_delay));
+            system("clear");
+            cout << "-" << endl;
             }
-            system("cls");
+            system("clear");
             cout << ch << endl;
         }
 
@@ -57,24 +56,24 @@ class text {
             string::iterator it = txt.begin();
             string last = "";
             do{
-                char ch = *it;
-                for(int i = 0; i <= retries; i++){
-                    this_thread::sleep_for(chrono::milliseconds(l_delay));
-                    system("cls");
-                    cout << last << "\\" << endl;
-                    this_thread::sleep_for(chrono::milliseconds(l_delay));
-                    system("cls");
-                    cout << last << "|" << endl;
-                    this_thread::sleep_for(chrono::milliseconds(l_delay));
-                    system("cls");
-                    cout << last << "/" << endl;
-                    this_thread::sleep_for(chrono::milliseconds(l_delay));
-                    system("cls");
-                    cout << last << "-" << endl;
-                }
-                this_thread::sleep_for(chrono::milliseconds(w_delay));
-                last += ch;
-                it++;
+            char ch = *it;
+            for(int i = 0; i <= retries; i++){
+                this_thread::sleep_for(chrono::milliseconds(l_delay));
+                system("clear");
+                cout << last << "\\" << endl;
+                this_thread::sleep_for(chrono::milliseconds(l_delay));
+                system("clear");
+                cout << last << "|" << endl;
+                this_thread::sleep_for(chrono::milliseconds(l_delay));
+                system("clear");
+                cout << last << "/" << endl;
+                this_thread::sleep_for(chrono::milliseconds(l_delay));
+                system("clear");
+                cout << last << "-" << endl;
+            }
+            this_thread::sleep_for(chrono::milliseconds(w_delay));
+            last += ch;
+            it++;
             }while(it != txt.end());
         }
 };
